@@ -1,38 +1,23 @@
 import React, { Component } from 'react'
+import {createGlobalStyle, css} from 'styled-components'
+import logo from './images/logo.svg'
+import bar from './images/bar.svg'
 
-import './app.css'
-import logo from './logo.png'
+const mainCss = css`
+  ${import('./css/app.css')}
+`;
+
+const GlobalStyle = createGlobalStyle`
+  ${mainCss}
+`;
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <span>
-            Learn{' '}
-            <a
-              className="App-link"
-              href="https://reactjs.org"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              React
-            </a>{' '}
-            and{' '}
-            <a
-              className="App-link"
-              href="https://react-static.js.org"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              React Static
-            </a>
-          </span>
-        </header>
+        <GlobalStyle />
+        <h1><img class="logo" src={logo} alt='LBar'/></h1>
+        <img class="bar" src={bar} />
       </div>
     )
   }
